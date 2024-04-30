@@ -1,5 +1,5 @@
 """
-URL configuration for crm project.
+URL configuration for Basic1 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,9 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import include, path
+from members import urls as members_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("",include('crmapp.urls'))
+    path('',include(members_urls))
+    # path('',include('demo.urls'))
 ]
